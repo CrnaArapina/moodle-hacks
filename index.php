@@ -136,6 +136,27 @@
 
     print_container_start();
 
+    $custom_module = !empty ($_REQUEST["mod"])? $_REQUEST["mod"]: "";
+
+    switch ($custom_module) {
+        case 'discuss': {
+            $custom_module = '/mod/forum/discuss.php';
+            break;
+        }
+        default: {
+            $custom_module = '';
+            break;
+        }
+    }
+
+    if ($custom_module != "") {
+        $custom_module_path = $CFG->dirroot . $custom_module;
+//        echo "<b>custom_module=" . $custom_module_path . "</b><br>";
+        $MODULE_INCLUDE = true;
+        include $custom_module_path;
+        $MODULE_INCLUDE = false;
+    } else { // CUSTOM_MODULE_START
+
 /// Print Section
     if ($SITE->numsections > 0) {
 
@@ -187,6 +208,7 @@
         $frontpagelayout = $CFG->frontpage;
     }
 
+    // Aqui ele esta gerando a secao central
     foreach (explode(',',$frontpagelayout) as $v) {
         switch ($v) {     /// Display the main part of the front page.
             case FRONTPAGENEWS:
@@ -253,6 +275,8 @@
         }
         echo '<br />';
     }
+
+    } // CUSTOM_MODULE_END
 
     print_container_end();
 
