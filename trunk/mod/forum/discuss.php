@@ -3,7 +3,9 @@
 //  Displays a post, and all the posts below it.
 //  If no post is given, displays all posts in a discussion
 
-    require_once('../../config.php');
+    if (!$MODULE_INCLUDE) {
+        require_once('../../config.php');
+    }
 
     $d      = required_param('d', PARAM_INT);                // Discussion ID
     $parent = optional_param('parent', 0, PARAM_INT);        // If set, then display this post and all children.
@@ -149,7 +151,6 @@
     $navigation = build_navigation($navlinks, $cm);
     print_header("$course->shortname: ".format_string($discussion->name), $course->fullname,
                      $navigation, "", "", true, $searchform, navmenu($course, $cm));
-
 
 /// Check to see if groups are being used in this forum
 /// If so, make sure the current person is allowed to see this discussion

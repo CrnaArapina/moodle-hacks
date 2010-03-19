@@ -1,6 +1,8 @@
 <?php  // $Id: index.php,v 1.104.2.13 2009/03/08 23:49:59 poltawski Exp $
 
-    require_once("../../config.php");
+    if (!$MODULE_INCLUDE) {
+        require_once("../../config.php");
+    }
     require_once("lib.php");
     require_once("$CFG->libdir/rsslib.php");
 
@@ -19,7 +21,6 @@
 
     require_course_login($course);
     $coursecontext = get_context_instance(CONTEXT_COURSE, $course->id);
-
 
     unset($SESSION->fromdiscussion);
 
@@ -44,7 +45,6 @@
     $strsection      = get_string('section');
 
     $searchform = forum_search_form($course);
-
 
     // Start of the table for General Forums
 
@@ -374,7 +374,6 @@
             }
         }
     }
-
 
     /// Output the page
     $navlinks = array();
