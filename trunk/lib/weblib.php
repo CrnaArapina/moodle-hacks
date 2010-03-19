@@ -2496,6 +2496,10 @@ function print_header ($title='', $heading='', $navigation='', $focus='',
 
     global $USER, $CFG, $THEME, $SESSION, $ME, $SITE, $COURSE;
 
+    global $MODULE_INCLUDE; if ($MODULE_INCLUDE) {
+        return;
+    }
+    
     if (gettype($navigation) == 'string' && strlen($navigation) != 0 && $navigation != 'home') {
         debugging("print_header() was sent a string as 3rd ($navigation) parameter. "
                 . "This is deprecated in favour of an array built by build_navigation(). Please upgrade your code.", DEBUG_DEVELOPER);
@@ -2973,6 +2977,10 @@ function print_header_simple($title='', $heading='', $navigation='', $focus='', 
  */
 function print_footer($course=NULL, $usercourse=NULL, $return=false) {
     global $USER, $CFG, $THEME, $COURSE;
+
+    global $MODULE_INCLUDE; if ($MODULE_INCLUDE) {
+        return;
+    }
 
     if (defined('ADMIN_EXT_HEADER_PRINTED') and !defined('ADMIN_EXT_FOOTER_PRINTED')) {
         admin_externalpage_print_footer();
