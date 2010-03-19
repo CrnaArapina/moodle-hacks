@@ -1,4 +1,4 @@
-<?php  // $Id: access.php,v 1.75.2.23 2009/12/30 17:17:09 stronk7 Exp $
+<?php  // $Id: access.php,v 1.75.2.25 2010/02/19 19:13:31 poltawski Exp $
 //
 // Capability definitions for Moodle core.
 //

@@ -1,4 +1,4 @@
-<?php // $Id: auth.php,v 1.27.2.19 2010/01/11 22:20:14 mjollnir_ Exp $
+<?php // $Id: auth.php,v 1.27.2.20 2010/02/17 01:32:14 mjollnir_ Exp $
 
 /**
  * @author Martin Dougiamas
@@ -228,6 +228,17 @@ class auth_plugin_mnet extends auth_plugin_base {
         $url = "{$mnet_peer->wwwroot}{$mnet_peer->application->sso_land_url}?token={$mnet_session->token}&idp={$MNET->wwwroot}&wantsurl={$wantsurl}";
 
         return $url;
+    }
+
+    /**
+     * after a successful login, land.php will call complete_user_login
+     * which will in turn regenerate the session id.
+     * this means that what is stored in mnet_session table needs updating.
+     *
+     */
+    function update_session_id() {
+        global $USER;
+        return set_field('mnet_session', 'session_id', session_id(), 'username', $USER->username, 'mnethostid', $USER->mnethostid, 'useragent', sha1($_SERVER['HTTP_USER_AGENT']));
     }
 
     /**
