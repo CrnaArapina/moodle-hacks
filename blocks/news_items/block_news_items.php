@@ -78,12 +78,13 @@ class block_news_items extends block_base {
                 $discussion->subject = format_string($discussion->subject, true, $forum->course);
 
                 $text .= '<li class="post">'.
-                         '<div class="head">'.
-                         '<div class="date">'.userdate($discussion->modified, $strftimerecent).'</div>'.
-                         '<div class="name">'.fullname($discussion).'</div></div>'.
-                         '<div class="info">'.$discussion->subject.' '.
+                         //'<div class="head">'.
+                         //'<div class="date">'.userdate($discussion->modified, $strftimerecent).'</div>'.
+                         //'<div class="name">'.fullname($discussion).'</div></div>'.
+                         '<div class="info">'.
                          '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.$discussion->discussion.'">'.
-                         $strmore.'...</a></div>'.
+                         $discussion->subject.
+                         '</a></div>'.
                          "</li>\n";
             }
             $text .= "</ul>\n";
