@@ -1020,7 +1020,7 @@ function forum_user_complete($course, $user, $mod, $forum) {
                 continue;
             }
             $discussion = $discussions[$post->discussion];
-            
+
             $ratings = null;
 
             if ($forum->assessed) {
@@ -1917,7 +1917,7 @@ function forum_get_all_user_ratings($userid, $discussions) {
     $sql .=" ORDER BY p.id ASC";
 
     return get_records_sql($sql);
-    
+
 
 }
 
@@ -2521,7 +2521,7 @@ function forum_get_user_discussions($courseid, $userid, $groupid=0) {
 }
 
 /**
- * Get the list of potential subscribers to a forum. 
+ * Get the list of potential subscribers to a forum.
  *
  * @param object $forumcontext the forum context.
  * @param integer $groupid the id of a group, or 0 for all groups.
@@ -2955,7 +2955,9 @@ function forum_print_post($post, $discussion, $forum, &$cm, $course, $ownpost=fa
         // Print shortened version
         echo format_text(forum_shorten_post($post->message), $post->format, $options, $course->id);
         $numwords = count_words(strip_tags($post->message));
-        echo '<div class="posting"><a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.$post->discussion.'">';
+//        echo '<div class="posting"><a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.$post->discussion.'">';
+// TODO: Ajustar para funcionar com e sem a inclusão de modulo
+        echo '<div class="posting"><a href="'.$CFG->wwwroot.'/index.php?mod=discuss&d='.$post->discussion.'">';
         echo get_string('readtherest', 'forum');
         echo '</a> ('.get_string('numwords', '', $numwords).')...</div>';
     } else {
@@ -2987,10 +2989,14 @@ function forum_print_post($post, $discussion, $forum, &$cm, $course, $ownpost=fa
                 $mtxt = $strmarkread;
             }
             if ($displaymode == FORUM_MODE_THREADED) {
-                $commands[] = '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.
+//                $commands[] = '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.
+// TODO: Ajustar para funcionar com e sem a inclusão de modulo
+                $commands[] = '<a href="'.$CFG->wwwroot.'/index.php?mod=discuss.php&d='.
                               $post->discussion.'&amp;parent='.$post->id.$mcmd.'">'.$mtxt.'</a>';
             } else {
-                $commands[] = '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.
+//                $commands[] = '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.
+// TODO: Ajustar para funcionar com e sem a inclusão de modulo
+                $commands[] = '<a href="'.$CFG->wwwroot.'/index.php?mod=discuss.php&d='.
                               $post->discussion.$mcmd.'#p'.$post->id.'">'.$mtxt.'</a>';
             }
         }
@@ -2998,10 +3004,14 @@ function forum_print_post($post, $discussion, $forum, &$cm, $course, $ownpost=fa
 
     if ($post->parent) {  // Zoom in to the parent specifically
         if ($displaymode == FORUM_MODE_THREADED) {
-            $commands[] = '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.
+//            $commands[] = '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.
+// TODO: Ajustar para funcionar com e sem a inclusão de modulo
+            $commands[] = '<a href="'.$CFG->wwwroot.'/index.php?mod=discuss&d='.
                       $post->discussion.'&amp;parent='.$post->parent.'">'.$strparent.'</a>';
         } else {
-            $commands[] = '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.
+//            $commands[] = '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.
+// TODO: Ajustar para funcionar com e sem a inclusão de modulo
+            $commands[] = '<a href="'.$CFG->wwwroot.'/index.php?mod=discuss?d='.
                       $post->discussion.'#p'.$post->parent.'">'.$strparent.'</a>';
         }
     }
@@ -3109,8 +3119,12 @@ function forum_print_post($post, $discussion, $forum, &$cm, $course, $ownpost=fa
         } else {
             $replystring = get_string('repliesmany', 'forum', $post->replies);
         }
-        echo '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.$post->discussion.'">'.
-             get_string('discussthistopic', 'forum').'</a>&nbsp;('.$replystring.')';
+        if (isloggedin()) {
+//            echo '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.$post->discussion.'">'.
+// TODO: Ajustar para funcionar com e sem a inclusão de modulo
+            echo '<a href="'.$CFG->wwwroot.'/index.php?mod=discuss&d='.$post->discussion.'">'.
+                get_string('discussthistopic', 'forum').'</a>&nbsp;('.$replystring.')';
+        }
         echo '</div>';
     }
 
@@ -4201,10 +4215,10 @@ function forum_unsubscribe($userid, $forumid) {
 function forum_post_subscription($post, $forum) {
 
     global $USER;
-    
+
     $action = '';
     $subscribed = forum_is_subscribed($USER->id, $forum);
-    
+
     if ($forum->forcesubscribe == FORUM_FORCESUBSCRIBE) { // database ignored
         return "";
 
@@ -4349,7 +4363,7 @@ function forum_get_tracking_link($forum, $messages=array(), $fakelink=true) {
     } else {
         $linktitle = $strtrackforum;
         $linktext = $strtrackforum;
-    } 
+    }
 
     $link = '';
     if ($fakelink) {
@@ -4936,6 +4950,8 @@ function forum_print_latest_discussions($course, $forum, $maxdiscussions=-1, $di
                     $modcontext = get_context_instance(CONTEXT_MODULE, $cm->id);
                     $link = forum_user_can_post($forum, $discussion, $USER, $cm, $course, $modcontext);
                 }
+
+                $link = true; // MARCOND: Para imprimir os resumos na FrontPage
 
                 $discussion->forum = $forum->id;
 
