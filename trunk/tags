@@ -3882,6 +3882,11 @@ callUserFunction	lib/typo3/class.t3lib_div.php	/^	function callUserFunction($fun
 callback	auth/cas/CAS/client.php	/^  function callback()$/;"	f
 callbackArmorCommentEntities	lib/htmlpurifier/HTMLPurifier/Lexer/DOMLex.php	/^    function callbackArmorCommentEntities($matches) {$/;"	f
 callbackUndoCommentSubst	lib/htmlpurifier/HTMLPurifier/Lexer/DOMLex.php	/^    function callbackUndoCommentSubst($matches) {$/;"	f
+callback_navbutton_url	mod/hotpot/lib.php	/^    function callback_navbutton_url(&$matches) {$/;"	f
+callback_preloadimages_urls	mod/hotpot/lib.php	/^    function callback_preloadimages_urls(&$matches) {$/;"	f
+callback_relative_url	mod/hotpot/lib.php	/^    function callback_relative_url(&$matches) {$/;"	f
+callback_stylesheets_urls	mod/hotpot/lib.php	/^    function callback_stylesheets_urls(&$matches) {$/;"	f
+callback_url	mod/hotpot/lib.php	/^    function callback_url(&$matches) {$/;"	f
 can_cache	search/querylib.php	/^    public function can_cache() {$/;"	f
 can_change_password	auth/cas/auth.php	/^    function can_change_password() {$/;"	f
 can_change_password	auth/db/auth.php	/^    function can_change_password() {$/;"	f
@@ -5245,6 +5250,7 @@ encodeAmpsAndAngles	lib/markdown.php	/^	function encodeAmpsAndAngles($text) {$/;
 encodeEmailAddress	lib/markdown.php	/^	function encodeEmailAddress($addr) {$/;"	f
 encodeNorm	search/Zend/Search/Lucene/Search/Similarity.php	/^    static function encodeNorm($f)$/;"	f
 encode_cdata	mod/hotpot/lib.php	/^    function encode_cdata(&$str, $tag) {$/;"	f
+encode_cdata_callback	mod/hotpot/lib.php	/^    function encode_cdata_callback(&$matches) {$/;"	f
 encode_content_links	blocks/moodleblock.class.php	/^    function encode_content_links($content, $restore) {$/;"	f
 encode_mimeheader	lib/textlib.class.php	/^    function encode_mimeheader($text, $charset='utf-8') {$/;"	f
 encryptionKey	lib/adodb/session/adodb-session.php	/^	function encryptionKey($encryption_key = null) {$/;"	f
@@ -5642,6 +5648,7 @@ exportValue	lib/form/choosecoursefile.php	/^    function exportValue(&$submitVal
 exportValue	lib/form/choosecoursefileorimsrepo.php	/^    function exportValue(&$submitValues, $assoc = false)$/;"	f
 exportValue	lib/form/dateselector.php	/^    function exportValue(&$submitValues, $assoc = false)$/;"	f
 exportValue	lib/form/datetimeselector.php	/^    function exportValue(&$submitValues, $assoc = false)$/;"	f
+exportValue	lib/form/select.php	/^    function exportValue(&$submitValues, $assoc = false)$/;"	f
 exportValue	lib/form/selectgroups.php	/^    function exportValue(&$submitValues, $assoc = false)$/;"	f
 exportValue	lib/pear/HTML/QuickForm.php	/^    function exportValue($element)$/;"	f
 exportValue	lib/pear/HTML/QuickForm/advcheckbox.php	/^    function exportValue(&$submitValues, $assoc)$/;"	f
@@ -8001,6 +8008,8 @@ hotpot_is_visible	mod/hotpot/lib.php	/^function hotpot_is_visible(&$cm) {$/;"	f
 hotpot_keypad_sort_value	mod/hotpot/template/v6.php	/^function hotpot_keypad_sort_value($char) {$/;"	f
 hotpot_mediaplayer_moodle	mod/hotpot/mediaplayers/moodle/filter.php	/^function hotpot_mediaplayer_moodle(&$hotpot, $text) {$/;"	f
 hotpot_prepare_str	question/format/hotpot/format.php	/^    function hotpot_prepare_str($str) {$/;"	f
+hotpot_prepare_str_dec	question/format/hotpot/format.php	/^    function hotpot_prepare_str_dec(&$matches) {$/;"	f
+hotpot_prepare_str_hexdec	question/format/hotpot/format.php	/^    function hotpot_prepare_str_hexdec(&$matches) {$/;"	f
 hotpot_print_attempt_details	mod/hotpot/review.php	/^function hotpot_print_attempt_details(&$hotpot, &$attempt) {$/;"	f
 hotpot_print_attempt_summary	mod/hotpot/review.php	/^function hotpot_print_attempt_summary(&$hotpot, &$attempt) {$/;"	f
 hotpot_print_recent_activity	mod/hotpot/lib.php	/^function hotpot_print_recent_activity($course, $isteacher, $timestart) {$/;"	f
@@ -8752,6 +8761,7 @@ journal_user_complete	mod/journal/lib.php	/^function journal_user_complete($cour
 journal_user_complete_index	mod/journal/lib.php	/^function journal_user_complete_index($course, $user, $journal, $journalopen, $heading) {$/;"	f
 journal_user_outline	mod/journal/lib.php	/^function journal_user_outline($course, $user, $mod, $journal) {$/;"	f
 js_safe	mod/hotpot/template/default.php	/^    function js_safe($str, $convert_to_unicode=false) {$/;"	f
+js_safe_callback	mod/hotpot/template/default.php	/^    function js_safe_callback(&$matches) {$/;"	f
 js_value	mod/hotpot/template/default.php	/^    function js_value($tags, $more_tags="[0]['#']", $convert_to_unicode=false) {$/;"	f
 jsonEncode	lib/pear/HTML/AJAX/Helper.php	/^	function jsonEncode($input) {$/;"	f
 json_decode	lib/pear/HTML/AJAX/JSON.php	/^	function json_decode($data) {$/;"	f
@@ -13781,13 +13791,13 @@ write	lib/adodb/session/adodb-compress-gzip.php	/^	function write($data, $key) {
 write	lib/adodb/session/adodb-encrypt-mcrypt.php	/^	function write($data, $key) {$/;"	f
 write	lib/adodb/session/adodb-encrypt-md5.php	/^	function write($data, $key) {$/;"	f
 write	lib/adodb/session/adodb-encrypt-secret.php	/^	function write($data, $key) {$/;"	f
-write	lib/adodb/session/adodb-encrypt-sha1.php	/^	function write($data, $key) $/;"	f
-write	lib/adodb/session/adodb-session.php	/^	function write($key, $val) $/;"	f
-write	lib/adodb/session/adodb-session2.php	/^	function write($key, $val) $/;"	f
-write	lib/excel/OLEwriter.php	/^    function write($data) \/\/por ahora sólo a STDOUT$/;"	f
-write	lib/excel/Worksheet.php	/^    function write($row, $col, $token, $format = 0)$/;"	f
-write	lib/excellib.class.php	/^    function write($row, $col, $token, $format=null) {$/;"	f
-write	lib/odslib.class.php	/^    function write($row, $col, $token, $format=0) {$/;"	f
+write   lib/adodb/session/adodb-encrypt-sha1.php        /^      function write($data, $key) $/;"        f
+write   lib/adodb/session/adodb-session.php     /^      function write($key, $val) $/;" f
+write   lib/adodb/session/adodb-session2.php    /^      function write($key, $val) $/;" f
+write   lib/excel/OLEwriter.php /^    function write($data) \/\/por ahora sï¿½lo a STDOUT$/;"      f
+write   lib/excel/Worksheet.php /^    function write($row, $col, $token, $format = 0)$/;"       f
+write   lib/excellib.class.php  /^    function write($row, $col, $token, $format=null) {$/;"    f
+write   lib/odslib.class.php    /^    function write($row, $col, $token, $format=0) {$/;"       f
 write	lib/pear/Spreadsheet/Excel/Writer/Worksheet.php	/^    function write($row, $col, $token, $format = null)$/;"	f
 write	lib/simpletestlib/socket.php	/^        function write($message) {$/;"	f
 write	lib/simpletestlib/tag.php	/^        function write(&$encoding) {$/;"	f
@@ -13873,6 +13883,7 @@ xml_depth	lib/xmlize.php	/^function xml_depth($vals, &$i) {$/;"	f
 xml_entitize	question/format/qti2/format.php	/^function xml_entitize(&$collection) {$/;"	f
 xml_tag_safe_content	backup/backuplib.php	/^    function xml_tag_safe_content($content) {$/;"	f
 xml_value	mod/hotpot/lib.php	/^    function xml_value($tags, $more_tags="[0]['#']") {$/;"	f
+xml_value_callback	mod/hotpot/lib.php	/^    function xml_value_callback(&$matches) {$/;"	f
 xml_values	mod/hotpot/lib.php	/^    function xml_values($tags) {$/;"	f
 xmldb_assignment_upgrade	mod/assignment/db/upgrade.php	/^function xmldb_assignment_upgrade($oldversion=0) {$/;"	f
 xmldb_backup_upgrade	backup/db/upgrade.php	/^function xmldb_backup_upgrade($oldversion=0) {$/;"	f

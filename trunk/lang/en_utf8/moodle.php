@@ -1,4 +1,4 @@
-<?PHP // $Id: moodle.php,v 1.141.2.80 2010/01/28 02:19:06 rwijaya Exp $
+<?PHP // $Id: moodle.php,v 1.141.2.82 2010/03/09 21:40:56 wildgirl Exp $
       // moodle.php - created with Moodle 1.7 beta + (2006101003)
 
 
@@ -43,7 +43,7 @@ $string['admin'] = 'Admin';
 $string['adminbookmarks'] = 'Admin bookmarks';
 $string['adminhelpaddnewuser'] = 'To manually create a new user account';
 $string['adminhelpassignadmins'] = 'Admins can do anything and go anywhere in the site';
-$string['adminhelpassigncreators'] = 'Creators can create new courses and teach in them';
+$string['adminhelpassigncreators'] = 'Course creators can create new courses';
 $string['adminhelpassignsiteroles'] = 'Apply defined site roles to specific users';
 $string['adminhelpassignstudents'] = 'Go into a course and add students from the admin menu';
 $string['adminhelpassignteachers'] = 'Find a course then use the icon to add teachers';
@@ -274,7 +274,7 @@ $string['coursecategories'] = 'Course categories';
 $string['coursecategory'] = 'Course category';
 $string['coursecategorydeleted'] = 'Deleted course category $a';
 $string['coursecreators'] = 'Course creator';
-$string['coursecreatorsdescription'] = 'Course creators can create new courses and teach in them.';
+$string['coursecreatorsdescription'] = 'Course creators can create new courses.';
 $string['coursedeleted'] = 'Deleted course $a';
 $string['coursefiles'] = 'Course files';
 $string['courseformatdata'] = 'Course format data';
@@ -287,7 +287,7 @@ $string['coursehelphiddensections'] = 'How the hidden sections in the course are
 $string['coursehelpnewsitemsnumber'] = 'Number of recent items appearing on the course home page, in a news box down the right-hand side <br/>(0 means the news box won\'t appear)
 .';
 $string['coursehelpshowgrades'] = 'Enable the display of the gradebook. It does not prevent grades from being displayed within the individual activities.';
-$string['coursehelpmaximumupload'] = 'Define the largest size of file that can be uploaded by students in this course, limited by the site wide setting.';
+$string['coursehelpmaximumupload'] = 'Define the largest size of file that can be uploaded in this course, limited by the site-wide setting.';
 $string['coursehelpmetacourse'] = 'Set the course a metacourse. A meta course takes enrolments (and other role assignments) from a \"child\" course or courses.';
 $string['coursehidden'] = 'This course is currently unavailable to students';
 $string['courseimportnotaught'] = 'You don\'t seem to be an editing teacher in any other courses, there are no courses for you to import from.';
