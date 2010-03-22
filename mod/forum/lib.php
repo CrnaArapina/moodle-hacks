@@ -2366,13 +2366,21 @@ function forum_get_discussions($cm, $forumsort="d.timemodified DESC", $fullpost=
         $umtable  = " LEFT JOIN {$CFG->prefix}user um ON (d.usermodified = um.id)";
     }
 
+    // MARCOND: Verifica se eh o sitenews, se for seleciona noticias de todos
+    // os forums da pagina principal (curso 1)
+    if ($cm->course == 1 && $cm->instance == 1) {
+        $whereclause = "d.course = 1";
+    } else {
+        $whereclause = "d.forum = {$cm->instance}";
+    }
+
     $sql = "SELECT $postdata, d.name, d.timemodified, d.usermodified, d.groupid, d.timestart, d.timeend,
                    u.firstname, u.lastname, u.email, u.picture, u.imagealt $umfields
               FROM {$CFG->prefix}forum_discussions d
                    JOIN {$CFG->prefix}forum_posts p ON p.discussion = d.id
                    JOIN {$CFG->prefix}user u ON p.userid = u.id
                    $umtable
-             WHERE d.forum = {$cm->instance} AND p.parent = 0
+             WHERE $whereclause AND p.parent = 0
                    $timelimit $groupselect
           ORDER BY $forumsort";
     return get_records_sql($sql, $limitfrom, $limitnum);
