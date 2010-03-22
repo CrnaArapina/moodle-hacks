@@ -143,6 +143,10 @@
             $custom_module = '/mod/forum/discuss.php';
             break;
         }
+        case 'forumview': {
+            $custom_module = '/mod/forum/view.php';
+            break;
+        }
         default: {
             $custom_module = '';
             break;
