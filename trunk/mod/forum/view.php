@@ -1,9 +1,11 @@
 <?php  // $Id: view.php,v 1.106.2.20 2009/11/30 17:12:17 sam_marshall Exp $
 
-    require_once('../../config.php');
+    if (!$MODULE_INCLUDE) {
+        require_once('../../config.php');
+    }
+
     require_once('lib.php');
     require_once("$CFG->libdir/rsslib.php");
-
 
     $id          = optional_param('id', 0, PARAM_INT);       // Course Module ID
     $f           = optional_param('f', 0, PARAM_INT);        // Forum ID
@@ -272,9 +274,9 @@
             }
             echo '<br />';
             if (!empty($showall)) {
-                forum_print_latest_discussions($course, $forum, 0, 'header', '', -1, -1, -1, 0, $cm);
+                forum_print_latest_discussions($course, $forum, 0, 'plain', '', -1, -1, -1, 0, $cm);
             } else {
-                forum_print_latest_discussions($course, $forum, -1, 'header', '', -1, -1, $page, $CFG->forum_manydiscussions, $cm);
+                forum_print_latest_discussions($course, $forum, -1, 'plain', '', -1, -1, $page, $CFG->forum_manydiscussions, $cm);
             }
 
 
