@@ -119,6 +119,7 @@ div.generalbox {
 }
 div.generalbox.ccbox {
   border-style: none;
+  width: 100%;
 }
 div.ccbox {
   border-style: none;
@@ -1545,3 +1546,8 @@ pre {
     word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
+/* Topicos escondidos 
+#module-6 {
+display:none;
+}
+*/
