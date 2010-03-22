@@ -1,4 +1,4 @@
-<?php // $Id: field.class.php,v 1.19.2.3 2010/01/22 00:01:08 stronk7 Exp $
+<?php // $Id: field.class.php,v 1.19.2.4 2010/03/07 15:29:39 skodak Exp $
 ///////////////////////////////////////////////////////////////////////////
 //                                                                       //
 // NOTICE OF COPYRIGHT                                                   //
@@ -84,6 +84,7 @@ class data_field_textarea extends data_field_base {
     
     function gen_textarea($usehtmleditor, $text='') {
         // MDL-16018: Don't print htmlarea with < 7 lines height, causes visualization problem
+        $text = clean_text($text);
         $this->field->param3 = $usehtmleditor && $this->field->param3 < 7 ? 7 : $this->field->param3;
         return print_textarea($usehtmleditor, $this->field->param3, $this->field->param2,
                               '', '', 'field_'.$this->field->id, $text, '', true, 'field_' . $this->field->id);

@@ -1,4 +1,4 @@
-<?php //$Id: blocklib.php,v 1.129.2.10 2010/01/20 04:36:23 rwijaya Exp $
+<?php //$Id: blocklib.php,v 1.129.2.11 2010/03/11 16:25:45 poltawski Exp $
 
 //This library includes all the necessary stuff to use blocks in course pages
 
@@ -580,7 +580,7 @@ function blocks_execute_action($page, &$pageblocks, $blockaction, $instanceorid,
                 if (!empty($pageblocks[$instance->position][$instance->weight - 1])) {
                     //define instance's position in the array
                     foreach ($pageblocks[$instance->position] as $instancekeysindex => $index ){
-                        if ($pageblocks[$instance->position][$instancekeysindex]->blockid == $instance->blockid){
+                        if ($pageblocks[$instance->position][$instancekeysindex]->id == $instance->id){
                             $instanceindex = $instancekeysindex;
                         }
                     }
@@ -622,7 +622,7 @@ function blocks_execute_action($page, &$pageblocks, $blockaction, $instanceorid,
                 if (!empty($pageblocks[$instance->position][$instance->weight + 1])) {
                     //define instance's position in the array
                     foreach ($pageblocks[$instance->position] as $instancekeysindex => $index ){
-                        if ($pageblocks[$instance->position][$instancekeysindex]->blockid == $instance->blockid){
+                        if ($pageblocks[$instance->position][$instancekeysindex]->id == $instance->id){
                             $instanceindex = $instancekeysindex;
                         }
                     }
