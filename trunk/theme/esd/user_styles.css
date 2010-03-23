@@ -1552,6 +1552,15 @@ display:none;
 }
 */
 
+/* Bloco de noticias com alinhamento a esquerda */
 .sideblock .content div.info {
   text-align: left;
+}
+
+/* Cabecalhos do forum com largura 100% */
+#intro.generalbox {
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 0;
+  width:100%;
 }
