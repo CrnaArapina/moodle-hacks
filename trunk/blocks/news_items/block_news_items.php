@@ -77,12 +77,13 @@ class block_news_items extends block_base {
 
                 $discussion->subject = format_string($discussion->subject, true, $forum->course);
 
+                // MARCOND: Modificado para mostrar somente a noticia
                 $text .= '<li class="post">'.
                          //'<div class="head">'.
                          //'<div class="date">'.userdate($discussion->modified, $strftimerecent).'</div>'.
                          //'<div class="name">'.fullname($discussion).'</div></div>'.
                          '<div class="info">'.
-                         '<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.$discussion->discussion.'">'.
+                         '&#187;&nbsp;<a href="'.$CFG->wwwroot.'/mod/forum/discuss.php?d='.$discussion->discussion.'">'.
                          $discussion->subject.
                          '</a></div>'.
                          "</li>\n";
