@@ -78,10 +78,10 @@ $THEME->langsheets = false;
 /// different styles.
 
 
-$THEME->block_l_min_width = 180;
-$THEME->block_l_max_width = 210;
-$THEME->block_r_min_width = 180;
-$THEME->block_r_max_width = 210;
+$THEME->block_l_min_width = 210;
+$THEME->block_l_max_width = 230;
+$THEME->block_r_min_width = 210;
+$THEME->block_r_max_width = 230;
 
 /// These values define the min and max width of the left and right
 /// sieblocks in the course pages. If not set or false the standard 
