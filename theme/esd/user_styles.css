@@ -1551,3 +1551,7 @@ pre {
 display:none;
 }
 */
+
+.sideblock .content div.info {
+  text-align: left;
+}
