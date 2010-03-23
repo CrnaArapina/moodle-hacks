@@ -1546,11 +1546,11 @@ pre {
     word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
-/* Topicos escondidos 
-#module-6 {
+/* Topicos escondidos */
+#module-5, #module-6, #module-7, #module-8, #module-9, #module-10 {
 display:none;
 }
-*/
+
 
 /* Bloco de noticias com alinhamento a esquerda */
 .sideblock .content div.info {
