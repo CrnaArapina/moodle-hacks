@@ -1564,3 +1564,8 @@ display:none;
   margin-bottom: 0;
   width:100%;
 }
+
+/* Largura do post nos forums */
+table.forumpost {
+  width: 100%;
+}
