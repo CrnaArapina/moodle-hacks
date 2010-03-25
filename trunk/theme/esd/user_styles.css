@@ -1569,3 +1569,7 @@ display:none;
 table.forumpost {
   width: 100%;
 }
+
+div#content div.ccbox {
+  background-color: #f4f4f4;
+}
