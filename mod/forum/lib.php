@@ -2370,9 +2370,9 @@ function forum_get_discussions($cm, $forumsort="d.timemodified DESC", $fullpost=
     // os forums da pagina principal (curso 1)
     if ($cm->course == 1 && $cm->instance == 1) {
         $whereclause = "d.course = 1";
+        $whereclause .= " AND d.forum <> 9"; // UGLY-HACK para nao listar os forums
     } else {
         $whereclause = "d.forum = {$cm->instance}";
-        $whereclause .= "AND d.forum <> 11"; // ugly-hack para nao listar os forums
     }
 
     $sql = "SELECT $postdata, d.name, d.timemodified, d.usermodified, d.groupid, d.timestart, d.timeend,
