@@ -2372,6 +2372,7 @@ function forum_get_discussions($cm, $forumsort="d.timemodified DESC", $fullpost=
         $whereclause = "d.course = 1";
     } else {
         $whereclause = "d.forum = {$cm->instance}";
+        $whereclause .= "AND d.forum <> 11"; // ugly-hack para nao listar os forums
     }
 
     $sql = "SELECT $postdata, d.name, d.timemodified, d.usermodified, d.groupid, d.timestart, d.timeend,
