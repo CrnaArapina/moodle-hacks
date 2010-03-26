@@ -272,13 +272,15 @@
                 $options->para = false;
                 print_box(format_text($forum->intro, FORMAT_MOODLE, $options), 'generalbox', 'intro');
             }
+            // MARCOND: Modificado para mostrar resumos dos forums, e os headers
+            // somente se o _nome_ do forum for 'forum'.
+            $format = strcasecmp ($forum->name, "forum")? 'plain': 'header';
             echo '<br />';
             if (!empty($showall)) {
-                forum_print_latest_discussions($course, $forum, 0, 'plain', '', -1, -1, -1, 0, $cm);
+                forum_print_latest_discussions($course, $forum, 0, $format, '', -1, -1, -1, 0, $cm);
             } else {
-                forum_print_latest_discussions($course, $forum, -1, 'plain', '', -1, -1, $page, $CFG->forum_manydiscussions, $cm);
+                forum_print_latest_discussions($course, $forum, -1, $format, '', -1, -1, $page, $CFG->forum_manydiscussions, $cm);
             }
-
 
             break;
     }
