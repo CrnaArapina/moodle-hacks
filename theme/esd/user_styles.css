@@ -1484,7 +1484,7 @@ body.grade-report-grader table#user-grades td.course {
 font: bold 14px arial;
 padding-left: 20px;
 margin: 6px 0 0 0;
-height: 26px;
+height: 24px;
 background-color: #dfa;
 }
 .hovermenu ul li{
@@ -1493,7 +1493,7 @@ display: inline;
 }
 /* Itens do menu */
 .hovermenu ul li a{
-padding: 5px 0.5em;
+padding: 4px 0.5em;
 text-decoration: none;
 float: left;
 color: #444;
