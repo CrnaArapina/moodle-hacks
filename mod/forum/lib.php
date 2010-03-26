@@ -4790,8 +4790,11 @@ function forum_print_latest_discussions($course, $forum, $maxdiscussions=-1, $di
 // button for it. We do not show the button if we are showing site news
 // and the current user is a guest.
 
+    // MARCOND: Modificado para não mostrar o botão de inclusão de noticias
+    // quando mostrando forums pertencentes a front page
     if (forum_user_can_post_discussion($forum, $currentgroup, $groupmode, $cm, $context) ||
         ($forum->type != 'news'
+         and $forum->course != '1' // Testa para front-page
          and (isguestuser() or !isloggedin() or has_capability('moodle/legacy:guest', $context, NULL, false))) ) {
 
         echo '<div class="singlebutton forumaddnew">';
