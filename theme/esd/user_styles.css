@@ -1481,76 +1481,75 @@ body.grade-report-grader table#user-grades td.course {
 /* HOVER MENU */
 /* Menu propriamente dito */
 .hovermenu ul{
-font: bold 14px arial;
-padding-left: 20px;
-margin: 6px 0 0 0;
-height: 24px;
-background-color: #dfa;
+  font: bold 14px arial;
+  padding-left: 20px;
+  margin: 6px 0 0 0;
+  height: 24px;
+  background-color: #dfa;
 }
 .hovermenu ul li{
-list-style: none;
-display: inline;
+  list-style: none;
+  display: inline;
 }
 /* Itens do menu */
 .hovermenu ul li a{
-padding: 4px 0.5em;
-text-decoration: none;
-float: left;
-color: #444;
-background-color: #dfa;
+  padding: 4px 0.5em;
+  text-decoration: none;
+  float: left;
+  color: #444;
+  background-color: #dfa;
 }
 /* Item selecionado */
 .hovermenu ul li a:hover{
-background-color: #6a0;
-color: #eee;
+  background-color: #6a0;
+  color: #eee;
 }
 /* Itens do menu */
 ul li.homemenu a {
-background: url(pix/home-normal.png);
-width: 1.2em;
-height: 14px;
-padding: 5px 0.5em;
-text-decoration: none;
-float: left;
-color: #444;
-background-color: #dfa;
+  background: url(pix/home-normal.png);
+  width: 1.2em;
+  height: 14px;
+  padding: 5px 0.5em;
+  text-decoration: none;
+  float: left;
+  color: #444;
+  background-color: #dfa;
 }
 /* Item selecionado */
 ul li.homemenu a:hover{
-background: url(pix/home-hover.png);
-width: 1.2em;
-height: 14px;
-color: #eee;
+  background: url(pix/home-hover.png);
+  width: 1.2em;
+  height: 14px;
+  color: #eee;
 }
 
 /* Codigo */
 pre.cmd {
-    background-color: #dfa;
+  background-color: #dfa;
 }
 pre.file {
-    background-color: #cff;
+  background-color: #cff;
 }
 pre {
-    padding: 1em;
-    border: 1px dashed #FFB53A;
-    color: black;
-    background-color: #f0f0f0;
-    font-size: 10pt;
-    line-height: 1.4em;
+  padding: 1em;
+  border: 1px dashed #FFB53A;
+  color: black;
+  background-color: #f0f0f0;
+  font-size: 10pt;
+  line-height: 1.4em;
 
-    /* Word-wrap! */
-    white-space: pre-wrap; /* css-3 */
-    white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
+  /* Word-wrap! */
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
 /* Topicos escondidos */
-#module-5, #module-6, #module-7, #module-8, #module-9, #module-10, #module-11 {
-display:none;
+#module-5, #module-6, #module-7, #module-8, #module-9, #module-10, #module-11, #module-12 {
+  display:none;
 }
-
 
 /* Bloco de noticias com alinhamento a esquerda */
 .sideblock .content div.info {
