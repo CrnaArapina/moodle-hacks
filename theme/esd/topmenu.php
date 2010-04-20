@@ -7,6 +7,6 @@
 <li><a href="<?php echo $CFG->wwwroot; ?>/index.php?mod=forumview&id=8">Midiateca</a></li>
 <li><a href="<?php echo $CFG->wwwroot; ?>/index.php?mod=forumview&id=11">Fórum</a></li>
 <li><a href="<?php echo $CFG->wwwroot; ?>/index.php?mod=forumview&id=9">Notícias</a></li>
-<li><a href="<?php echo $CFG->wwwroot; ?>/mod/resource/view.php?id=10">Contato</a></li>
+<li><a href="<?php echo $CFG->wwwroot; ?>/mod/contact/index.php">Contato</a></li>
 </ul>
 </div>
