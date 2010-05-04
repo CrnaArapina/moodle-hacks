@@ -1572,3 +1572,47 @@ table.forumpost {
 div#content div.ccbox {
   background-color: #f4f4f4;
 }
+
+/**********************************/
+/* CUSTOMIZACAO DO TOPICO DO SITE */
+/**********************************/
+
+div#content div.sitetopic {
+  background-color: transparent;
+}
+
+div#content div.sitetopic div.bt,
+div#content div.sitetopic div.bt div {
+  background-image: none;
+  height: 0;
+}
+
+div#content div.sitetopic div.i1 {
+  background-image: none;
+  padding: 0;
+}
+
+div#content div.sitetopic div.i2 {
+  background-image: none;
+  padding: 0;
+}
+
+div#content div.sitetopic div.bb,
+div#content div.sitetopic div.bb div {
+  background-image: none;
+  height: 0;
+}
+
+div#content div.sitetopic div.i3 {
+  padding: 0;
+  border-style: none;
+}
+  /*padding-left: 8px;
+  padding-right: 8px;*/
+
+/* Apaga a secao de recursos do site (GOOD!) */
+#site-index ul.section {
+  display: none;
+}
+
+/*************************TOPICO*/
